@@ -35,7 +35,7 @@ applications. I am a quick learner and am eager to continue developing my skills
               <br />
               <br />
               <a href="./src/assets/mahamud-resume.pdf" download>
-                <button className="btn-primary">Download CV</button>
+                <button className="btn-primary transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">Download CV</button>
               </a>
             </div>
           </div>
@@ -44,7 +44,7 @@ applications. I am a quick learner and am eager to continue developing my skills
               <img
                 src={aboutImg}
                 alt=""
-                className="w-full object-cover bg-cyan-600 rounded-xl"
+                className="w-full object-cover bg-cyan-600 rounded-xl "
               />
             </div>
           </div>

@@ -23,7 +23,7 @@ My passion lies in crafting interactive  Web Experiences and User Interfaces and
 
 Whenever I can, I channel my enthusiasm for frontend development with Modern UI Frameworks and Libraries like Tailwind CSS and React.js to bring designs to life.
           </p>
-          <button className="btn-primary mt-10">Say Hello</button>
+          <button className="btn-primary mt-10 ">Say Hello</button>
         </div>
         <img
           src={hireMe}

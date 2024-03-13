@@ -99,7 +99,7 @@ const Project = () => {
           </Swiper>
         </div>
         <div className="lg:block hidden">
-          <img className='w-fit h-fit' src={project_person} alt="" />
+          <img className='w-fit h-fit animate-bounce ' src={project_person} alt="" />
         </div>
       </div>
     </section>
