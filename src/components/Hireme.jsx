@@ -28,7 +28,7 @@ Whenever I can, I channel my enthusiasm for frontend development with Modern UI 
         <img
           src={hireMe}
           alt=""
-          className="lg:h-[26rem] h-80 lg:absolute bottom-0 -right-3 object-cover"
+          className="lg:h-[26rem] h-80 lg:absolute bottom-0 -right-3 object-cover hover:skew-y-3"
         />
       </div>
     </section>

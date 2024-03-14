@@ -44,7 +44,7 @@ applications. I am a quick learner and am eager to continue developing my skills
               <img
                 src={aboutImg}
                 alt=""
-                className="w-full object-cover bg-cyan-600 rounded-xl "
+                className="w-full object-cover bg-cyan-600 rounded-xl hover:skew-y-3"
               />
             </div>
           </div>
