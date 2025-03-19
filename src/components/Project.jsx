@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import project1 from "../assets/images/project-1.png";
 import project2 from "../assets/images/project-2.png";
@@ -11,6 +11,24 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper";
 
 const Project = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const section = document.getElementById("projects");
+    if (section) observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   const projects = [
     {
       img: project1,
@@ -33,8 +51,7 @@ const Project = () => {
     {
       img: project4,
       name: "Pizzafever",
-      github_link:
-        "https://github.com/MahamudM90/pizzafever.git",
+      github_link: "https://github.com/MahamudM90/pizzafever.git",
       live_link: "https://pizza-man-61510.web.app",
     },
     {
@@ -44,6 +61,7 @@ const Project = () => {
       live_link: "https://invoice-generator-react.netlify.app",
     },
   ];
+
   return (
     <section id="projects" className="py-10 text-white">
       <div className="text-center">
@@ -53,8 +71,14 @@ const Project = () => {
         <p className="text-gray-400 mt-3 text-lg">My awesome works</p>
       </div>
       <br />
+
       <div className="flex max-w-6xl gap-6 px-5 mx-auto items-center relative">
-        <div className="lg:w-2/3 w-full">
+        {/* Left Side - Swiper with Animation */}
+        <div
+          className={`lg:w-2/3 w-full transition-transform duration-[3000ms] ease-in-out ${
+            isVisible ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+          }`}
+        >
           <Swiper
             slidesPerview={1.2}
             spaceBetween={20}
@@ -81,6 +105,7 @@ const Project = () => {
                     <a
                       href={project_info.github_link}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
                     >
                       Github
@@ -88,6 +113,7 @@ const Project = () => {
                     <a
                       href={project_info.live_link}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
                     >
                       Live Demo
@@ -98,8 +124,10 @@ const Project = () => {
             ))}
           </Swiper>
         </div>
+
+        {/* Right Side - Animated Image */}
         <div className="lg:block hidden">
-          <img className='w-fit h-fit animate-bounce ' src={project_person} alt="" />
+          <img className="w-fit h-fit animate-bounce" src={project_person} alt="Project Person" />
         </div>
       </div>
     </section>
